@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
@@ -26,6 +27,7 @@ public class PostsRepositoryTest {
     }
 
     @Test
+    @WithMockUser(roles = "USER")
     public void 게시글저장_불러오기() {
         //given
         String title = "테스트 게시글";
@@ -47,6 +49,7 @@ public class PostsRepositoryTest {
     }
 
     @Test
+    @WithMockUser(roles = "USER")
     public void BaseTimeEntity_등록() {
         //given
         LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
