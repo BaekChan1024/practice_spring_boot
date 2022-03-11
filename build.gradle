@@ -46,4 +46,6 @@ dependencies {
     annotationProcessor ('org.projectlombok:lombok')
     testAnnotationProcessor ('org.projectlombok:lombok')
     testCompile ('org.projectlombok:lombok')
+
+    compile('org.mariadb.jdbc:mariadb-java-client')
 }
